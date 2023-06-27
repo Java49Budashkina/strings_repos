@@ -118,4 +118,16 @@ class StringsTest {
 		assertFalse("252.1.2$.2".matches(regex));
 		
 	}
+	@Test
+	void arifmTest() {
+		String regex = Strings.arifm();
+		assertTrue("100+34".matches(regex));
+		assertTrue("100 - 34 + 21".matches(regex));
+		assertTrue("100 / 20".matches(regex));
+		
+		assertFalse("-3".matches(regex));
+		assertFalse("1233".matches(regex));
+		assertFalse("2 - - -3".matches(regex));
+		
+	}	
 }

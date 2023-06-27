@@ -20,4 +20,10 @@ public static String  ipV4() {
 
 }
 
+public static String  arifm() {
+	
+	return "(\\s*(\\d+)\\s*[+-*/]\\s*\\d+)*\\s*";
+
+}
+
 }
