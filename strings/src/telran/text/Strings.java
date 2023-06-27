@@ -20,9 +20,14 @@ public static String  ipV4() {
 
 }
 
+public static String  ipV4_f() {
+	return   String.format("(%s\\.){3}%s", ipV4octet(), ipV4octet());
+
+}
+
 public static String  arifm() {
-	
-	return "(\\s*(\\d+)\\s*[+-*/]\\s*\\d+)*\\s*";
+
+	return "(-)?\\d+\\s*([-|+|*|/]\\s*\\d+){1,}";
 
 }
 

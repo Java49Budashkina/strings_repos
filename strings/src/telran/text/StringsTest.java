@@ -119,11 +119,33 @@ class StringsTest {
 		
 	}
 	@Test
+	void ipV4_fTest() {
+		String regex = Strings.ipV4_f();
+			
+		assertTrue("0.0.0.0".matches(regex));
+		assertTrue("123.99.44.23".matches(regex));
+		assertTrue("255.255.0.1".matches(regex));
+		
+		assertFalse("0000".matches(regex));
+		assertFalse(".1.2.3.4".matches(regex));
+		assertFalse("1.2.3.4.".matches(regex));
+		assertFalse("1.3".matches(regex));
+		assertFalse("1.2.3.4.5".matches(regex));
+		assertFalse("252.1.2$.2".matches(regex));
+		
+	}
+	
+	@Test
 	void arifmTest() {
 		String regex = Strings.arifm();
+		
+		assertTrue("100-34-21".matches(regex));
 		assertTrue("100+34".matches(regex));
-		assertTrue("100 - 34 + 21".matches(regex));
-		assertTrue("100 / 20".matches(regex));
+		assertTrue("100/20".matches(regex));
+		assertTrue("100-34+21".matches(regex));
+		assertTrue("100/34*21+23-14".matches(regex));
+		assertTrue("-100*34+21".matches(regex));
+		assertTrue("100 - 34".matches(regex));
 		
 		assertFalse("-3".matches(regex));
 		assertFalse("1233".matches(regex));
