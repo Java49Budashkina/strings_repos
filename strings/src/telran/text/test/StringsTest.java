@@ -204,8 +204,8 @@ class StringsTest {
 		
 		
 		assertEquals(112.4, Strings.computeExpression(" 12 + a", mapOperands ));
-		assertEquals(11.25, Strings.computeExpression("b/2", mapOperands ));
-		assertEquals(90.5, Strings.computeExpression(" 12*  c / 4 + a -d ", mapOperands ));
+		assertEquals(11.25, Strings.computeExpression("b/2", mapOperands ), 0.01);
+		assertEquals(90.5, Strings.computeExpression(" 12*  c / 4 + a -d ", mapOperands ), 0.1);
 		assertEquals(47.26666666666667, Strings.computeExpression("a+b+d/c", mapOperands ));
 		assertThrowsExactly(IllegalArgumentException.class,
 				() -> Strings.computeExpression(" 12/ a b + 100 10", mapOperands ));

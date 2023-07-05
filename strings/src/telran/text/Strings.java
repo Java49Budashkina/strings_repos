@@ -13,14 +13,6 @@ public class Strings {
 		mapOperations.put("/",(a,b) -> a / b);
 	}
 
-//	static HashMap<String, Double> mapOperands;
-//	static {
-//		mapOperands = new HashMap<>();
-//		mapOperands.put("a", 100.4);
-//		mapOperands.put("b", 22.5);
-//		mapOperands.put("c", 3.);
-//		mapOperands.put("d", 18.9);
-//	}
 	
 public static String  javaVariableName() {
 	return "([a-zA-Z$][\\w$]*|_[\\w$]+)";
@@ -63,13 +55,10 @@ public static String  arithmExpression() {  // name is not correct
 
 private static String operator() {
 	return "\\s*([-+*/])\\s*";
-	
-	
 }
 
 private static String operand() {
-	//return "(\\d+)";
-	return "(\\d+(\\.)?\\d*)";
+	return "(\\d+(\\.)?\\d*)|\\.\\d+";
 }
 
 public static boolean isArithmeticExpression(String sss){
